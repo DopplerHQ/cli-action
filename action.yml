@@ -1,5 +1,8 @@
 name: 'Install Doppler CLI'
 description: 'Install the Doppler CLI into your PATH'
+branding:
+  icon: 'download'
+  color: 'blue'
 runs:
   using: 'node12'
   main: 'index.js'

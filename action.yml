@@ -1,0 +1,6 @@
+name: 'Install Doppler CLI'
+description: 'Install the Doppler CLI into your PATH'
+runs:
+  using: 'node12'
+  main: 'index.js'
+

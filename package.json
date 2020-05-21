@@ -1,0 +1,27 @@
+{
+  "name": "cli-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to install the Doppler CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DopplerHQ/cli-action.git"
+  },
+  "keywords": [],
+  "author": "Doppler",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/DopplerHQ/cli-action/issues"
+  },
+  "homepage": "https://github.com/DopplerHQ/cli-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^2.2.0",
+    "@actions/io": "^1.0.2",
+    "@actions/tool-cache": "^1.5.5"
+  }
+}

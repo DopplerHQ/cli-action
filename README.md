@@ -1,6 +1,6 @@
 # Install Doppler CLI action
 
-This action installs the latest [Doppler CLI](https://github.com/DopplerHQ/cli) into your PATH.
+The Doppler CLI is the official tool for interacting with your Enclave secrets and configuration. This action installs the latest [Doppler CLI](https://github.com/DopplerHQ/cli) into your PATH.
 
 ## Example usage
 

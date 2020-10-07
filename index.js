@@ -1,5 +1,4 @@
 const core = require('@actions/core');
-const exec = require('@actions/exec');
 const tc = require('@actions/tool-cache');
 const io = require('@actions/io');
 
@@ -39,12 +38,12 @@ async function installTar(path, url) {
   await io.mkdirP(path);
   const downloadPath = await tc.downloadTool(url);
   await tc.extractTar(downloadPath, path);
-  await exec.exec('echo', [`::add-path::${path}`]);
+  core.addPath(path);
 }
 
 async function installZip(path, url) {
   await io.mkdirP(path);
   const downloadPath = await tc.downloadTool(url);
   await tc.extractZip(downloadPath, path);
-  await exec.exec('echo', [`::add-path::${path}`]);
+  core.addPath(path);
 }

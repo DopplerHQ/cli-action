@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const tc = require('@actions/tool-cache');
 const io = require('@actions/io');
+const { execSync } = require('child_process');
 
 const workspace = process.env.GITHUB_WORKSPACE;
 const binDir = `${workspace}/bin`;
@@ -16,14 +17,9 @@ async function run() {
       await installZip(binDir, url);
       break;
     }
-    case "linux": {
-      const url = "https://cli.doppler.com/download?os=linux&arch=amd64&format=tar";
-      await installTar(binDir, url);
-      break;
-    }
+    case "linux":
     case "darwin": {
-      const url = "https://cli.doppler.com/download?os=macos&arch=amd64&format=tar";
-      await installTar(binDir, url);
+      await executeInstallSh(binDir)
       break;
     }
     default: {
@@ -32,16 +28,25 @@ async function run() {
   }
 }
 
-async function installTar(path, url) {
-  await io.mkdirP(path);
-  const downloadPath = await tc.downloadTool(url);
-  await tc.extractTar(downloadPath, path);
-  core.addPath(path);
-}
-
 async function installZip(path, url) {
   await io.mkdirP(path);
   const downloadPath = await tc.downloadTool(url);
   await tc.extractZip(downloadPath, path);
   core.addPath(path);
+}
+
+async function executeInstallSh(installPath) {
+  // download script
+  const url = "https://cli.doppler.com/install.sh";
+  const downloadPath = await tc.downloadTool(url);
+  execSync(`chmod +x ${downloadPath}`);
+
+  // execute script
+  await io.mkdirP(installPath);
+  const installCommand = `${downloadPath} --debug --no-package-manager --install-path ${installPath}`
+  stdout = execSync(installCommand, { timeout: 15000 });
+  console.log(Buffer.from(stdout).toString("utf-8"))
+
+  // add binary to PATH
+  core.addPath(installPath);
 }

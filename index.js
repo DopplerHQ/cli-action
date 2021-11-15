@@ -5,11 +5,9 @@ const io = require('@actions/io');
 const workspace = process.env.GITHUB_WORKSPACE;
 const binDir = `${workspace}/bin`;
 
-try {
-  run();
-} catch (error) {
+run().catch(error => {
   core.setFailed(error.message);
-}
+})
 
 async function run() {
   switch (process.platform) {

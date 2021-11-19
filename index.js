@@ -44,7 +44,7 @@ async function executeInstallSh(installPath) {
   // execute script
   await io.mkdirP(installPath);
   const installCommand = `${downloadPath} --debug --no-package-manager --install-path ${installPath}`
-  stdout = execSync(installCommand, { timeout: 15000 });
+  stdout = execSync(installCommand, { timeout: 30000 });
   console.log(Buffer.from(stdout).toString("utf-8"))
 
   // add binary to PATH

@@ -4,6 +4,6 @@ branding:
   icon: 'download'
   color: 'blue'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
 

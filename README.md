@@ -7,7 +7,7 @@ The [Doppler CLI](https://github.com/DopplerHQ/cli) is the official tool for int
 Include this Action as a step in your workflow:
 
 ```
-uses: dopplerhq/cli-action@v1
+uses: dopplerhq/cli-action@v2
 ```
 
 You can see a live example of this Action [here](https://github.com/DopplerHQ/cli/blob/master/.github/workflows/cli-action.yml).
@@ -25,10 +25,10 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-    - name: Install CLI
-      uses: dopplerhq/cli-action@v1
-    - name: Do something with the CLI
-      run: doppler secrets --only-names
-      env:
-        DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
+      - name: Install CLI
+        uses: dopplerhq/cli-action@v2
+      - name: Do something with the CLI
+        run: doppler secrets --only-names
+        env:
+          DOPPLER_TOKEN: ${{ secrets.DOPPLER_TOKEN }}
 ```

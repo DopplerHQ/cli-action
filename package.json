@@ -1,6 +1,6 @@
 {
   "name": "cli-action",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "GitHub Action to install the Doppler CLI",
   "main": "index.js",
   "scripts": {
@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/DopplerHQ/cli-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/io": "^1.0.2",
-    "@actions/tool-cache": "^1.6.0"
+    "@actions/core": "^1.10.1",
+    "@actions/io": "^1.1.3",
+    "@actions/tool-cache": "^1.7.2"
   }
 }

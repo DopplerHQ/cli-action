@@ -3,8 +3,8 @@ const tc = require('@actions/tool-cache');
 const io = require('@actions/io');
 const { execSync } = require('child_process');
 
-const workspace = process.env.GITHUB_WORKSPACE;
-const binDir = `${workspace}/bin`;
+const tempDir = process.env.RUNNER_TEMP;
+const binDir = `${tempDir}/doppler-cli-bin`;
 
 run().catch(error => {
   core.setFailed(error.message);

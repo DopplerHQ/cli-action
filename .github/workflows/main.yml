@@ -1,17 +1,29 @@
+name: CI
+
 on: [push]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+permissions: read-all
 
 jobs:
   test_action:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, ubuntu-20.04, macos-latest, macos-11, windows-latest, windows-2019]
+        os: [ubuntu-latest, ubuntu-22.04, ubuntu-24.04, macos-latest, macos-14, macos-15, windows-latest, windows-2022, windows-2025]
     name: Install the cli
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
       - name: Install CLI
         uses: ./
-        id: install
       - name: Test CLI
         run: doppler --version
+      - name: Install CLI
+        uses: ./
+      - name: Test CLI Version Output
+        run: |
+          doppler --version

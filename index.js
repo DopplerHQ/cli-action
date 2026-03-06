@@ -3,8 +3,8 @@ import * as tc from '@actions/tool-cache';
 import * as io from '@actions/io';
 import { execSync } from 'child_process';
 
-const workspace = process.env.GITHUB_WORKSPACE;
-const binDir = `${workspace}/bin`;
+const tempDir = process.env.RUNNER_TEMP;
+const binDir = `${tempDir}/doppler-cli-bin`;
 
 run().catch(error => {
   core.setFailed(error.message);

@@ -32740,7 +32740,7 @@ async function executeInstallSh(installPath) {
   // execute script
   await mkdirP(installPath);
   const installCommand = `${downloadPath} --debug --no-package-manager --install-path ${installPath}`;
-  execSync(installCommand, { timeout: 30000, stdio: "inherit" });
+  execSync(installCommand, { timeout: 120_000, stdio: "inherit" });
 
   // add binary to PATH
   addPath(installPath);

@@ -8,6 +8,8 @@
   "packageManager": "pnpm@11.21.0",
   "scripts": {
     "build": "rolldown --config rolldown.config.ts",
+    "lint:check": "oxlint --max-warnings 0",
+    "lint:fix": "oxlint --fix",
     "type:check": "tsc --noEmit"
   },
   "repository": {
@@ -28,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
+    "oxlint": "^1.78.0",
     "typescript": "^7.0.0",
     "rolldown": "^1.2.4"
   }

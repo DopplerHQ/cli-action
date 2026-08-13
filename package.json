@@ -4,6 +4,8 @@
   "description": "GitHub Action to install the Doppler CLI",
   "main": "bin/index.js",
   "type": "module",
+  "private": true,
+  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "build": "rollup --config rollup.config.js"
   },
@@ -19,8 +21,8 @@
   },
   "homepage": "https://github.com/DopplerHQ/cli-action#readme",
   "dependencies": {
-    "@actions/core": "^3.0.0",
-    "@actions/io": "^3.0.0",
+    "@actions/core": "^3.0.1",
+    "@actions/io": "^3.0.2",
     "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {

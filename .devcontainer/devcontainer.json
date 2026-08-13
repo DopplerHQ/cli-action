@@ -1,0 +1,15 @@
+{
+  "image": "us-central1-docker.pkg.dev/gar-prod-73b1cdf/devtools/devcontainer:latest",
+  "name": "cli-action",
+  "features": {
+    "ghcr.io/dopplerhq/devcontainer-features/volume-permissions:1": {
+      "basePath": "/shared-volume",
+      "paths": ".pnpm-store,node_modules"
+    }
+  },
+  "mounts": [
+    "type=volume,source=${localWorkspaceFolderBasename}-shared-mount,target=/shared-volume",
+    "type=volume,source=${localWorkspaceFolderBasename}-shared-mount,target=${containerWorkspaceFolder}/.pnpm-store,volume-subpath=./.pnpm-store",
+    "type=volume,source=${localWorkspaceFolderBasename}-shared-mount,target=${containerWorkspaceFolder}/node_modules,volume-subpath=./node_modules"
+  ]
+}

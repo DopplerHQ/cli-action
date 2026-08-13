@@ -7,7 +7,8 @@
   "private": true,
   "packageManager": "pnpm@11.21.0",
   "scripts": {
-    "build": "rolldown --config rolldown.config.ts"
+    "build": "rolldown --config rolldown.config.ts",
+    "type:check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",

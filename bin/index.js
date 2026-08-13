@@ -19137,7 +19137,7 @@ function _getGlobal(key, defaultValue) {
 	return value !== void 0 ? value : defaultValue;
 }
 //#endregion
-//#region src/index.js
+//#region src/index.ts
 const binDir = `${process.env.GITHUB_WORKSPACE}/bin`;
 run().catch((error) => {
 	setFailed(error.message);

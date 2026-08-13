@@ -28,14 +28,14 @@ async function run() {
   }
 }
 
-async function installZip(path, url) {
+async function installZip(path: string, url: string) {
   await io.mkdirP(path);
   const downloadPath = await tc.downloadTool(url);
   await tc.extractZip(downloadPath, path);
   core.addPath(path);
 }
 
-async function executeInstallSh(installPath) {
+async function executeInstallSh(installPath: string) {
   // download script
   const url = "https://cli.doppler.com/install.sh";
   const downloadPath = await tc.downloadTool(url);

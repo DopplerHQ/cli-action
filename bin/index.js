@@ -1,4 +1,6 @@
 import { createRequire } from "node:module";
+import * as child from "child_process";
+import { execSync } from "child_process";
 import * as os$1 from "os";
 import os, { EOL } from "os";
 import * as crypto from "crypto";
@@ -10,8 +12,6 @@ import * as https from "https";
 import * as events from "events";
 import { ok } from "assert";
 import * as util from "util";
-import * as child from "child_process";
-import { execSync } from "child_process";
 import { setTimeout as setTimeout$1 } from "timers";
 import * as stream from "stream";
 //#region \0rolldown/runtime.js

@@ -1,5 +1,5 @@
 name: Test
-on: 
+on:
   pull_request:
   push:
     branches:
@@ -85,7 +85,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: 
+        os:
           - ubuntu-latest
           - ubuntu-24.04
           - ubuntu-22.04

@@ -1,25 +1,25 @@
-import * as core from '@actions/core';
-import * as tc from '@actions/tool-cache';
-import * as io from '@actions/io';
-import { execSync } from 'child_process';
+import { execSync } from "child_process";
+import * as core from "@actions/core";
+import * as io from "@actions/io";
+import * as tc from "@actions/tool-cache";
 
 const workspace = process.env.GITHUB_WORKSPACE;
 const binDir = `${workspace}/bin`;
 
-run().catch(error => {
+run().catch((error) => {
   core.setFailed(error.message);
-})
+});
 
 async function run() {
   switch (process.platform) {
     case "win32": {
-      const url = 'https://cli.doppler.com/download?os=windows&arch=amd64&format=zip';
+      const url = "https://cli.doppler.com/download?os=windows&arch=amd64&format=zip";
       await installZip(binDir, url);
       break;
     }
     case "linux":
     case "darwin": {
-      await executeInstallSh(binDir)
+      await executeInstallSh(binDir);
       break;
     }
     default: {
@@ -43,7 +43,7 @@ async function executeInstallSh(installPath: string) {
 
   // execute script
   await io.mkdirP(installPath);
-  const installCommand = `${downloadPath} --debug --no-package-manager --install-path ${installPath}`
+  const installCommand = `${downloadPath} --debug --no-package-manager --install-path ${installPath}`;
   execSync(installCommand, { timeout: 30000, stdio: "inherit" });
 
   // add binary to PATH

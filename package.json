@@ -7,7 +7,7 @@
   "private": true,
   "packageManager": "pnpm@11.21.0",
   "scripts": {
-    "build": "rollup --config rollup.config.js"
+    "build": "rolldown --config rolldown.config.ts"
   },
   "repository": {
     "type": "git",
@@ -26,9 +26,8 @@
     "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^29.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.3",
     "@types/node": "^24.0.0",
-    "rollup": "^4.59.0"
+    "typescript": "^7.0.0",
+    "rolldown": "^1.2.4"
   }
 }

@@ -3,7 +3,7 @@ name: Dependencies
 permissions:
   contents: read
 
-on: 
+on:
   pull_request:
 
 jobs:

@@ -1,32 +1,40 @@
 {
   "name": "cli-action",
   "version": "4.0.1",
+  "private": true,
   "description": "GitHub Action to install the Doppler CLI",
-  "main": "bin/index.js",
-  "type": "module",
-  "scripts": {
-    "build": "rollup --config rollup.config.js"
+  "keywords": [],
+  "homepage": "https://github.com/DopplerHQ/cli-action#readme",
+  "bugs": {
+    "url": "https://github.com/DopplerHQ/cli-action/issues"
   },
+  "license": "Apache-2.0",
+  "author": "Doppler",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DopplerHQ/cli-action.git"
   },
-  "keywords": [],
-  "author": "Doppler",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/DopplerHQ/cli-action/issues"
+  "type": "module",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "rolldown --config rolldown.config.ts",
+    "format:check": "oxfmt --check",
+    "format:fix": "oxfmt",
+    "lint:check": "oxlint --max-warnings 0",
+    "lint:fix": "oxlint --fix",
+    "type:check": "tsc --noEmit"
   },
-  "homepage": "https://github.com/DopplerHQ/cli-action#readme",
   "dependencies": {
-    "@actions/core": "^3.0.0",
-    "@actions/io": "^3.0.0",
+    "@actions/core": "^3.0.1",
+    "@actions/io": "^3.0.2",
     "@actions/tool-cache": "^4.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^29.0.2",
-    "@rollup/plugin-node-resolve": "^16.0.3",
     "@types/node": "^24.0.0",
-    "rollup": "^4.59.0"
-  }
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.78.0",
+    "rolldown": "^1.2.4",
+    "typescript": "^7.0.0"
+  },
+  "packageManager": "pnpm@11.21.0"
 }

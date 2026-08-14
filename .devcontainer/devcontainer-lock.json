@@ -1,0 +1,9 @@
+{
+  "features": {
+    "ghcr.io/dopplerhq/devcontainer-features/volume-permissions:1": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/dopplerhq/devcontainer-features/volume-permissions@sha256:1d8efab986aa2656786518cea4752f0afc779d3ef949280a7be015e227d6e967",
+      "integrity": "sha256:1d8efab986aa2656786518cea4752f0afc779d3ef949280a7be015e227d6e967"
+    }
+  }
+}

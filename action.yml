@@ -1,9 +1,8 @@
-name: 'Install Doppler CLI'
-description: 'Install the Doppler CLI into your PATH'
+name: "Install Doppler CLI"
+description: "Install the Doppler CLI into your PATH"
 branding:
-  icon: 'download'
-  color: 'blue'
+  icon: "download"
+  color: "blue"
 runs:
-  using: 'node24'
-  main: 'bin/index.js'
-
+  using: "node24"
+  main: "bin/index.js"
